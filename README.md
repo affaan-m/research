@@ -37,6 +37,41 @@ This project offers valuable insights into the dynamic interplay between social 
 
 ---
 
+## Research Project 2: Comparing Neural Networks with Newton’s Method Gradient Descent, SVM, and Random Forest for Max-Flow Optimization in Supply Chain Networks
+
+### Overview
+
+This study embarks on a comparative analysis of machine learning techniques for optimizing supply chain networks, focusing on the max-flow problem. Utilizing three key datasets - "Daily Demand Forecasting Orders" from Ferreira et al. (2017), "Wholesale Customers" from Cardoso (2014), and "Online Retail" (2015) - the research aims to model and predict critical factors influencing supply chain efficiency.
+
+### Methodology
+
+The project is systematically structured as follows:
+
+1. **Data Preparation**: Initial Exploratory Data Analysis (EDA) for understanding dataset characteristics, followed by data cleaning and preprocessing.
+2. **Model Selection**: Employing Neural Networks using Newton's Method Gradient Descent, Support Vector Machines (SVM), and Random Forests (RF) for the analysis.
+3. **Data Splitting**: Dividing datasets into different training-testing splits (80/20, 50/50, 20/80) to evaluate model performance.
+4. **Model Training and Evaluation**: Training each classifier and assessing performance based on accuracy, F-score, Lift, ROC Area, average precision, and other metrics.
+5. **Visualization and Analysis**: Plotting convergence rates and performance metrics to compare classifiers visually.
+6. **Hyperparameter Tuning and Cross-Validation**: Using GridSearchCV to optimize hyperparameters for each classifier.
+
+### Findings
+
+- **Neural Networks**: Demonstrated high accuracy but required substantial computational resources for convergence.
+- **SVM**: Showed consistent and robust performance across different datasets.
+- **Random Forest**: Achieved high training accuracy, indicating proficiency in capturing complex data patterns but also a potential for overfitting.
+
+### Insights and Future Work
+
+- **Computational Efficiency**: Logistic Regression and SVM are preferable for limited computational power, while Neural Networks are suitable with ample computational resources.
+- **Model Stability**: Further investigation into feature relationships and model stability is necessary for robust predictive performance.
+- **Future Research**: Exploring hybrid models or ensemble techniques combining the strengths of these classifiers could enhance supply chain optimization.
+
+### Conclusion
+
+The study provides a nuanced understanding of how different machine learning models can optimize various aspects of supply chain management. While Random Forest stands out for handling complex datasets, Neural Networks show promise for future applications with sufficient computational support. Logistic Regression and SVM offer accessible alternatives for scenarios with computational or data limitations.
+
+---
+
 **Note**: This repository is continuously updated with new research and findings. Please feel free to explore the content and contribute or provide feedback.
 
 ## License
