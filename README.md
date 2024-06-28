@@ -108,7 +108,7 @@ This project embarks on an unprecedented exploration into the recognition of han
 
 ### Findings
 
-- **Accuracy**: Achieved an accuracy of over 98% in recognizing handwritten Quranic Arabic with integrated Tajweed rules using ResNet.
+- **Accuracy**: Achieved an accuracy of over 91% in recognizing handwritten Quranic Arabic with integrated Tajweed rules using ResNet.
 - **Model Robustness**: Enhanced through advanced data augmentation techniques and iterative refinement.
 - **Comparative Analysis**: ResNet outperformed AlexNet in both accuracy and efficiency, demonstrating its superior capability in handling complex recognition tasks.
 
