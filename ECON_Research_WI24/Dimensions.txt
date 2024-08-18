@@ -1,0 +1,2 @@
+Total number of rows: 763504805 (Total User_ID's in Dataset)
+Total number of rows: 76350473 (Sample User_ID's in Dataset) ~ 10%
