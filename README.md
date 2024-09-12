@@ -122,14 +122,14 @@ This project embarks on an unprecedented exploration into the recognition of han
 
 This project significantly contributes to the field of computational linguistics and artificial intelligence by addressing the complex task of Quranic Arabic recognition with integrated Tajweed rules. The insights gained lay the groundwork for further advancements and practical applications, aiming to enrich the educational and religious experiences of the global Muslim community.
 
-# ECON_Research_WI24: Large-Scale User ID Sampling and Analysis
+## ECON_Research_WI24: Large-Scale User ID Sampling and Analysis
 
-## Project Overview
+### Project Overview
 This project, developed for the Economics Department Research Lab Winter 2024, focuses on efficient sampling and analysis of large-scale user ID datasets. It's designed to work with the San Diego Supercomputer Center, specifically for research on the economic impact of return migrants. The project combines econometric techniques with Natural Language Processing (NLP) and leverages advanced computing methods for data handling and analysis.
 
-## Key Components
+### Key Components
 
-### 1. samplethenconcatenate.py
+#### 1. samplethenconcatenate.py
 This Python script is the core of the sampling process. It uses Dask for distributed computing to efficiently sample and merge large Parquet files.
 
 Key functions and features:
@@ -147,7 +147,7 @@ Additional features:
 - Memory usage tracking using `psutil`
 - Progress bar for visual feedback during processing
 
-### 2. Bash Script (SLURM Job Submission)
+#### 2. Bash Script (SLURM Job Submission)
 This script is used to submit the sampling job to the SLURM workload manager on the supercomputer.
 
 Key features:
@@ -155,7 +155,7 @@ Key features:
 - Navigates to the correct directory
 - Executes the Python script with appropriate arguments
 
-### 3. Data Verification Script
+#### 3. Data Verification Script
 This script verifies the sampled dataset by counting the total number of rows.
 
 Key features:
@@ -163,49 +163,49 @@ Key features:
 - Configures Dask for optimized query planning
 - Loads the sampled dataset and computes the total row count
 
-## Workflow
+### Workflow
 1. The bash script submits the job to SLURM, which executes `samplethenconcatenate.py`.
 2. `samplethenconcatenate.py` reads the Parquet files, samples 10% of the data, and saves the result.
 3. The data verification script then loads the sampled dataset and computes the total number of rows.
 
-## Results
+### Results
 - Original dataset: 763,504,805 User IDs
 - Sampled dataset: 76,350,473 User IDs (approximately 10%)
 - Runtime reduced from 2.5 hours to 26 minutes
 
-## Technical Proficiencies Demonstrated
+### Technical Proficiencies Demonstrated
 - Unix/Terminal: Used for job submission and cluster interaction
 - Python: Core language for script development
 - Dask: Utilized for distributed computing and efficient data handling
 - SLURM: Workload manager for job submission on the supercomputer
 - Parquet: Efficient columnar storage format for large datasets
 
-## Key Achievements
+### Key Achievements
 - Developed a Parallelized Computing Algorithm for efficient data sampling
 - Significantly reduced runtime from 2.5 hours to 26 minutes
 - Achieved 10% sampling of an 800 million user dataset without increasing storage and memory costs
 - Set a new benchmark for processing scalability and speed in large-scale data analysis
 
-## Usage
+### Usage
 1. Ensure all dependencies are installed (Dask, psutil).
 2. Submit the job using the provided bash script: sbatch job_submission_script.sh
 3. Once the job completes, verify the results using the data verification script.
 
-## Future Directions
+### Future Directions
 - Further optimization of the sampling algorithm for even larger datasets
 - Integration with NLP techniques for in-depth analysis of migration trends
 - Development of advanced econometric models leveraging the sampled data
 
 Note: This project is part of ongoing research on the economic impact of return migrants, blending econometric techniques with NLP and leveraging advanced computing resources for comprehensive migration analysis.
 
-# ECON_Research_SS24: O Globo Violence Article Scraper
+## ECON_Research_SS24: O Globo Violence Article Scraper
 
-## Project Overview
+### Project Overview
 This project, developed for the Economics Department Undergraduate Research Lab Summer 2024, is designed to scrape and analyze articles from O Globo's Rio de Janeiro section, focusing on violence-related news. The scraper collects articles, processes their content, and classifies them based on their likelihood of being related to violent events.
 
-## File Structure and Functionality
+### File Structure and Functionality
 
-### 1. main.py
+#### 1. main.py
 This is the entry point of the application. It orchestrates the entire scraping and data processing pipeline.
 
 Key functions:
@@ -217,7 +217,7 @@ Key functions:
   - Provides a summary of scraped data
   - Saves data to CSV and DataFrame formats
 
-### 2. scraper.py
+#### 2. scraper.py
 Contains the core logic for scraping articles from O Globo's website.
 
 Key functions:
@@ -230,7 +230,7 @@ Key functions:
   - Extracts various data points using functions from data_processors.py
   - Yields a dictionary of extracted and processed data for each article
 
-### 3. content_extractor.py
+#### 3. content_extractor.py
 Handles the retrieval and parsing of full article content.
 
 Key functions:
@@ -240,7 +240,7 @@ Key functions:
   - Uses various CSS selectors to locate article content
   - Cleans the extracted text by removing unwanted elements and whitespace
 
-### 4. data_processors.py
+#### 4. data_processors.py
 Contains functions for processing and extracting specific data from article content.
 
 Key functions:
@@ -254,7 +254,7 @@ Key functions:
 - `is_violence_related(text)`: Determines if the article is related to violence
 - `extract_journalist(text)`: Extracts the name of the journalist
 
-### 5. utils.py
+#### 5. utils.py
 Provides utility functions used across the project.
 
 Key functions:
@@ -264,7 +264,7 @@ Key functions:
 - `format_date(date)`: Formats datetime objects to standard string format
 - `extract_important_metadata(content)`: Extracts key metadata from article content
 
-### 6. violence_classifier.py
+#### 6. violence_classifier.py
 Implements a machine learning model to classify articles based on their likelihood of being related to violent events.
 
 Key class:
@@ -273,7 +273,7 @@ Key class:
   - `train_classifier()`: Trains the model on a predefined set of examples
   - `predict_violence_likelihood(text)`: Predicts the likelihood of an article being violence-related
 
-## How It All Ties Together
+### How It All Ties Together
 1. `main.py` initiates the scraping process by calling `scrape_oglobo()` from `scraper.py`.
 2. `scraper.py` fetches article listings, extracts basic info, and calls `get_article_content()` from `content_extractor.py` to get full article text.
 3. The scraped content is then processed using various functions from `data_processors.py` and `utils.py` to extract relevant information.
@@ -281,7 +281,7 @@ Key class:
 5. All extracted and processed data is compiled into a dictionary for each article and yielded back to `main.py`.
 6. `main.py` saves this data to CSV and DataFrame formats, providing a summary of the scraped articles.
 
-## Usage
+### Usage
 To run the scraper:
 1. Ensure all dependencies are installed (requests, beautifulsoup4, pandas, numpy, scikit-learn, geopy).
 2. Run `python main.py` from the command line.
