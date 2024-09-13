@@ -265,13 +265,35 @@ Key functions:
 - `extract_important_metadata(content)`: Extracts key metadata from article content
 
 #### 6. violence_classifier.py
-Implements a machine learning model to classify articles based on their likelihood of being related to violent events.
+Implements machine learning models to classify articles based on their likelihood of being related to violent events. This file offers two classification approaches: a simpler scikit-learn based model and a more robust BERT-based transformer model.
 
-Key class:
-- `ViolenceClassifier`:
-  - Uses scikit-learn's TfidfVectorizer and MultinomialNB for classification
-  - `train_classifier()`: Trains the model on a predefined set of examples
-  - `predict_violence_likelihood(text)`: Predicts the likelihood of an article being violence-related
+Key classes:
+
+1. `SimpleViolenceClassifier`:
+   - Uses scikit-learn's TfidfVectorizer and MultinomialNB for classification
+   - `train_classifier()`: Trains the model on a predefined set of examples
+   - Suitable for quick classification with lower computational requirements
+
+2. `RobustViolenceClassifier`:
+   - Utilizes a pre-trained Portuguese BERT model ("neuralmind/bert-base-portuguese-cased")
+   - Capable of fine-tuning on domain-specific data for improved accuracy
+   - Key methods:
+     - `fine_tune(texts, labels)`: Fine-tunes the model on a manually labeled dataset of violence and non-violence related articles
+     - `predict_violence_likelihood(text)`: Predicts the likelihood of an article being violence-related
+
+Usage notes:
+- The BERT-based classifier requires pre-training or fine-tuning on a manual sample of marked violence and non-violence articles before use in the main scraping process.
+- Fine-tuning process:
+  1. Collect a diverse set of articles from O Globo or similar sources
+  2. Manually label these articles (1 for violence-related, 0 for non-violence)
+  3. Use the `fine_tune` method with this labeled dataset
+  4. The fine-tuned model can then be used for predictions during the scraping process
+
+Choosing between classifiers:
+- SimpleViolenceClassifier: Use for faster processing and when computational resources are limited
+- RobustViolenceClassifier: Prefer for higher accuracy, especially when dealing with nuanced or context-dependent violence references in Portuguese text
+
+Note: The BERT-based classifier requires more computational resources, especially during the fine-tuning process. GPU acceleration is recommended for efficient fine-tuning and faster inference.
 
 ### How It All Ties Together
 1. `main.py` initiates the scraping process by calling `scrape_oglobo()` from `scraper.py`.
