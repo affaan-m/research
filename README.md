@@ -1,6 +1,6 @@
-# Research Work by Affaan - UCSD
+# Research Work by Affaan - UCSD / UW
 
-Welcome to Affaan's research repository, housing various research projects conducted at UCSD and personally. This repository is a testament to the commitment towards pushing the boundaries of knowledge and innovation, particularly in the fields of quantitative finance, economics, and the intersection with cutting-edge technology. Below is an overview of the current projects and their corresponding descriptions.
+Welcome to Affaan's research repository, housing various research projects conducted at UCSD, UW and personally. This repository is a testament to the commitment towards pushing the boundaries of knowledge and innovation, particularly in the fields of quantitative finance, economics, and the intersection with cutting-edge technology. Below is an overview of the current projects and their corresponding descriptions.
 
 ## Research Project 1: Discovering Market Manipulation Using Sentiment Analysis in Microcap Cryptocurrencies
 
